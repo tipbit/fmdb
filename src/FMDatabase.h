@@ -107,12 +107,13 @@
 
 - (BOOL)update:(NSString*)sql withErrorAndBindings:(NSError**)outErr, ...;
 - (BOOL)executeUpdate:(NSString*)sql, ...;
-- (BOOL)executeUpdateWithFormat:(NSString *)format, ...;
+- (BOOL)executeUpdateWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+
 - (BOOL)executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments;
 - (BOOL)executeUpdate:(NSString*)sql withParameterDictionary:(NSDictionary *)arguments;
 
 - (FMResultSet *)executeQuery:(NSString*)sql, ...;
-- (FMResultSet *)executeQueryWithFormat:(NSString*)format, ...;
+- (FMResultSet *)executeQueryWithFormat:(NSString*)format, ... NS_FORMAT_FUNCTION(1,2);
 - (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments;
 - (FMResultSet *)executeQuery:(NSString *)sql withParameterDictionary:(NSDictionary *)arguments;
 
