@@ -1064,7 +1064,7 @@ static int bindNSString(sqlite3_stmt *pStmt, int idx, NSString *str) {
     
     BOOL worked = [self executeUpdate:[NSString stringWithFormat:@"rollback transaction to savepoint '%@';", name]];
     
-    if (!worked && *outErr) {
+    if (!worked && outErr) {
         *outErr = [self lastError];
     }
     
