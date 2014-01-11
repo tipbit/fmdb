@@ -545,7 +545,7 @@ static int bindNSString(sqlite3_stmt *pStmt, int idx, NSString *str) {
 
 - (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args {
     
-    if (![self databaseExists]) {
+    if (![self databaseExists] || sql == nil) {
         return 0x00;
     }
     
