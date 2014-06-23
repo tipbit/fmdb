@@ -69,10 +69,10 @@
 
 - (void)close {
     FMDBRetain(self);
-    dispatch_sync(_queue, ^() { 
-        [_db close];
+    dispatch_sync(_queue, ^() {
+        [self->_db close];
         FMDBRelease(_db);
-        _db = 0x00;
+        self->_db = 0x00;
     });
     FMDBRelease(self);
 }
